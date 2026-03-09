@@ -1,0 +1,92 @@
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+  animation: fadeIn 0.3s ease;
+}
+
+.dialog-container {
+  background: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: scaleIn 0.3s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.dialog-content {
+  padding: 1.5rem;
+}
+
+.dialog-message {
+  font-size: 1.1rem;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.dialog-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.dialog-cancel-btn,
+.dialog-confirm-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  min-width: 100px;
+}
+
+.dialog-cancel-btn {
+  background-color: #e2e8f0;
+  color: #4a5568;
+}
+
+.dialog-cancel-btn:hover {
+  background-color: #cbd5e0;
+}
+
+.dialog-confirm-btn {
+  background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+  color: white;
+}
+
+.dialog-confirm-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(229, 62, 62, 0.3);
+}
+
+@media (max-width: 768px) {
+  .dialog-actions {
+    flex-direction: column;
+  }
+
+  .dialog-cancel-btn,
+  .dialog-confirm-btn {
+    width: 100%;
+  }
+}
